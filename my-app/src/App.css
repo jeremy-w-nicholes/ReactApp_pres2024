@@ -1,3 +1,19 @@
+/* General Reset and Base Styles */
+* {
+  outline: none !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure the body takes the full viewport height */
+body {
+  height: 100vh;
+  margin: 0;
+  transition: background 1s ease-in-out; /* Smooth transition for gradient changes */
+}
+
+/* Styles specific to the App */
 .App {
   text-align: center;
 }
@@ -13,8 +29,9 @@
   }
 }
 
+/* Remove background color to allow dynamic gradients */
 .App-header {
-  background-color: #282c34;
+  background-color: transparent; /* Make header background transparent */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,11 +45,123 @@
   color: #61dafb;
 }
 
+/* Keyframe animation */
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(14deg);
   }
   to {
     transform: rotate(360deg);
   }
 }
+
+/* Fullscreen Sections */
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Content inside each section */
+.section-content {
+  background-color: transparent; /* Ensure content background is transparent */
+  padding: 20px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Make all elements inside section-content transparent */
+.section-content > * {
+  background-color: transparent !important;
+}
+
+/* Specific elements within section content */
+img, iframe, p, h2, div {
+  background-color: transparent !important;
+  border: none;
+}
+
+/* Styling for the navigation bar */
+nav {
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent nav bar */
+  padding: 8px 16px;
+  transition: background-color 0.5s ease;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+nav li {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Highlight active section in the nav bar */
+.active-nav-item {
+  background-color: #874e1d;
+  color: white !important;
+}
+
+/* GitHub profile button styles */
+.github-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #6e3712;
+  padding: 6px 12px;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+}
+
+.github-button:hover {
+  background-color: #531c0e;
+}
+
+.github-button img {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
+
+body {
+  background: black;
+
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Remove focus outline around sections */
+.section:focus {
+  outline: none;
+  border: none;
+}
+.fp-watermark {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
